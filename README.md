@@ -44,3 +44,7 @@ os: win32 x64
 https://angular.io/guide/template-syntax#!#property-binding-or-interpolation-
 
 https://material.angular.io/components/dialog/overview
+
+## License
+
+MIT
