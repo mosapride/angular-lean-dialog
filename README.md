@@ -6,7 +6,7 @@ angularのダイアログ(confirm)が無いので作ってみた勉強用のシ�
 
 ## site
 作り方とか使い方はサイトに記載  
-https://mosapride.com
+https://mosapride.com/index.php/2017/07/03/post-370/
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.2.0.
 
