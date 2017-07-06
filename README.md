@@ -1,5 +1,8 @@
 # LeanAngularDialog
 
+demo
+https://mosapride.com/angular/demo/dialog/
+
 angularのダイアログ(confirm)が無いので作ってみた勉強用のシステム
 
 勉強用。
