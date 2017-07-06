@@ -1,4 +1,4 @@
-import { ConfirmComponent } from './dialog/confirm/confirm.component';
+import { DialogComponent, DialogConfirm } from './dialog/confirm/dialog.component';
 import { Component, NgModule } from '@angular/core';
 import { MdDialog, MdDialogConfig } from '@angular/material';
 
@@ -8,54 +8,64 @@ import { MdDialog, MdDialogConfig } from '@angular/material';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+
+  dialog: DialogConfirm;
+
   title: string;
   content: string;
-  confirmReturn: string;
+  rtnVal: string;
 
   constructor(
-    private dialog: MdDialog
+    private mdDialog: MdDialog
   ) {
+    this.dialog = new DialogConfirm(mdDialog);
   }
 
-  button1() {
-    const config = new MdDialogConfig();
-    config.data = {
-      title: this.title,
-      content: this.content
-    }
-    const ref = this.dialog.open(ConfirmComponent, config);
-    ref.afterClosed().subscribe(rtn => this.confirmReturn = rtn);
-  }
-
-  button2() {
-    const config = new MdDialogConfig();
-    config.data = {
-      title: this.title,
-      content: this.content
-    }
-    const ref = this.dialog.open(ConfirmComponent, config);
-    ref.afterClosed().subscribe(rtn => {
-      switch (rtn) {
-        case 'ok':
-          this.confirmReturn = '(*`･ω･)ゞOK ';
-          break;
-        case 'cancel':
-          this.confirmReturn = '(´・ω・`) cance...';
-          break;
-        default:
-          this.confirmReturn = '(`ω´) undefined';
-          break;
+  confirm() {
+    this.dialog.confirm(this.title, this.content).subscribe(rtn => {
+      if (rtn) {
+        this.rtnVal = rtn + '';
+        console.log('ok');
+      } else {
+        this.rtnVal = rtn + '';
+        console.log('cancel or undefined');
       }
     });
   }
 
-  button3() {
-    const config = new MdDialogConfig();
-    config.data = {
-      title: 'PPAP',
-      content: '<ul><li>i have a pen</li><li>i have an apple</li><li>ummm....</li><li><b>APPLE PEN!!!</b></li></ul>'
-    }
-    const ref = this.dialog.open(ConfirmComponent, config);
-    ref.afterClosed().subscribe(rtn => this.confirmReturn = 'PPAP!!!!');
+  error() {
+    this.dialog.error(this.title, this.content).subscribe(rtn => {
+      if (rtn) {
+        this.rtnVal = rtn + '';
+        console.log('ok');
+      } else {
+        this.rtnVal = rtn + '';
+        console.log('cancel or undefined');
+      }
+    });
+  }
+
+  info() {
+    this.dialog.info(this.title, this.content).subscribe(rtn => {
+      if (rtn) {
+        this.rtnVal = rtn + '';
+        console.log('ok');
+      } else {
+        this.rtnVal = rtn + '';
+        console.log('cancel or undefined');
+      }
+    });
+  }
+
+  warning() {
+    this.dialog.warning(this.title, this.content).subscribe(rtn => {
+      if (rtn) {
+        this.rtnVal = rtn + '';
+        console.log('ok');
+      } else {
+        this.rtnVal = rtn + '';
+        console.log('cancel or undefined');
+      }
+    });
   }
 }
