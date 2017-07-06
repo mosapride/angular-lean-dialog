@@ -1,4 +1,4 @@
-import { DialogComponent, DialogConfirm } from './dialog/confirm/dialog.component';
+import { DialogComponent, DialogConfirm } from './dialog/dialog.component';
 import { Component, NgModule } from '@angular/core';
 import { MdDialog, MdDialogConfig } from '@angular/material';
 
