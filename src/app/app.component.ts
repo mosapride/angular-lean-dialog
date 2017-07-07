@@ -1,4 +1,4 @@
-import { DialogComponent, DialogConfirm } from './dialog/dialog.component';
+import { DialogComponent, Dialog } from './dialog/dialog.component';
 import { Component, NgModule } from '@angular/core';
 import { MdDialog, MdDialogConfig } from '@angular/material';
 
@@ -9,7 +9,7 @@ import { MdDialog, MdDialogConfig } from '@angular/material';
 })
 export class AppComponent {
 
-  dialog: DialogConfirm;
+  dialog: Dialog;
 
   title: string;
   content: string;
@@ -18,7 +18,7 @@ export class AppComponent {
   constructor(
     private mdDialog: MdDialog
   ) {
-    this.dialog = new DialogConfirm(mdDialog);
+    this.dialog = new Dialog(mdDialog);
   }
 
   confirm() {

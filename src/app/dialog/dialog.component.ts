@@ -78,17 +78,17 @@ export class DialogComponent implements OnInit {
  * example
  * ```
  * // << component class - global area
- * dialog: DialogConfirm;
+ * dialog: Dialog;
  * // >>
  *
  * // << conponent class - counstracter
  * constructor( private mdDialog: MdDialog ) {
- *   this.dialog = new DialogConfirm(mdDialog);
+ *   this.dialog = new Dialog(mdDialog);
  * }
  * // >>
  * ```
 */
-export class DialogConfirm {
+export class Dialog {
   private dialog;
   constructor(dialog: MdDialog) {
     this.dialog = dialog;
@@ -111,7 +111,7 @@ export class DialogConfirm {
    * @param {string} title ダイアログのタイトル
    * @param {string} content ダイアログの内容
    * @returns {Observable<boolean>} true:OK, false:cancel, undefined:ESC,Click outside the dialog
-   * @memberof DialogConfirm
+   * @memberof Dialog
    */
   public confirm(title: string, content: string): Observable<boolean> {
     const config = new MdDialogConfig();
@@ -141,7 +141,7 @@ export class DialogConfirm {
    * @param {string} title ダイアログのタイトル
    * @param {string} content ダイアログの内容
    * @returns {Observable<boolean>} true:close, undefined:ESC,Click outside the dialog
-   * @memberof DialogConfirm
+   * @memberof Dialog
    */
   public error(title: string , content: string): Observable<boolean> {
     const config = new MdDialogConfig();
@@ -171,7 +171,7 @@ export class DialogConfirm {
    * @param {string} title ダイアログのタイトル
    * @param {string} content ダイアログの内容
    * @returns {Observable<boolean>} true:close, undefined:ESC,Click outside the dialog
-   * @memberof DialogConfirm
+   * @memberof Dialog
    */
   public info(title: string , content: string): Observable<boolean> {
     const config = new MdDialogConfig();
@@ -201,7 +201,7 @@ export class DialogConfirm {
    * @param {string} title ダイアログのタイトル
    * @param {string} content ダイアログの内容
    * @returns {Observable<boolean>} true:close, undefined:ESC,Click outside the dialog
-   * @memberof DialogConfirm
+   * @memberof Dialog
    */
   public warning(title: string , content: string): Observable<boolean> {
     const config = new MdDialogConfig();
